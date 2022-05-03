@@ -1,0 +1,57 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="main">
+      <div id="titleBar">
+        Mojo Console
+      </div>
+    </div>
+  </body>
+
+  <!-- Styling -->
+  <style>
+  #main {
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #titleBar {
+    font-size: 1.2em;
+  }
+  </style>
+
+  <!-- Javascript -->
+  <script>
+  function sendCommand(payload){
+    let client = new XMLHttpRequest();
+    let key = new window.URLSearchParams(window.location.search).get("k");
+    let url = '/mojoplus/api';
+
+    client.open("POST", url, true);
+    client.setRequestHeader("Content-Type", "application/json");
+
+    client.onreadystatechange = () => {
+      if (client.readyState === 4 && client.status === 200) {
+        let result = document.getElementById("c2");
+
+        // Print received data from server
+        result.innerHTML = JSON.parse(this.responseText).payload.replace(/\n/g, "<p/>");
+      }
+    };
+
+    // Converting JSON data to string
+    var data = JSON.stringify({ "k": key, "request": "invoke", "payload": payload });
+    
+    // Sending data with the request
+    client.send(data);
+  }
+  </script>
+</html>
