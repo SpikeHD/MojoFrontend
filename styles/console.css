@@ -1,12 +1,28 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: none;
+}
+
+#logo {
+  height: 20px;
 }
 
 #main {
   background-color: #fff;
   color: #000;
   font-size: 12px;
-  font-weight: bold;
   padding: 5px;
   text-align: center;
   width: 100%;
@@ -14,6 +30,42 @@ body {
   overflow: hidden;
 }
 
+#right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 #titleBar {
-  font-size: 1.2em;
+  font-size: 3em;
+  padding: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 200px;
+  background-color: #eee;
+}
+
+.sidebarItem {
+  font-size: 1.4em;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+
+  transition: background 0.2s ease-in-out;
+}
+
+.sidebarItem:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
 }

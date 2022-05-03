@@ -1,23 +1,22 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles/console.css" />
+    <script src="scripts/onload.js"></script>
     <script src="scripts/console.js"></script>
   </head>
   <body>
     <div id="main">
       <div id="titleBar">
-        Mojo Console
+        Mojo Console <img src="" id="logo" />
+      </div>
+      <div id="right">
+        <div id="sidebar">
+          <div class="sidebarItem" data-value="players">Players</div>
+          <div class="sidebarItem" data-value="server">Server</div>
+        </div>
+        <iframe id="content" src="pages/default.html"></iframe>
       </div>
     </div>
   </body>
-
-  <!-- Styling -->
-  <style>
-
-  </style>
-
-  <!-- Javascript -->
-  <script>
-
-  </script>
 </html>

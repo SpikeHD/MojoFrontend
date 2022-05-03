@@ -21,3 +21,8 @@ function sendCommand(payload){
   // Sending data with the request
   client.send(data);
 }
+
+function switchPage(page) {
+  const iframe = document.getElementById("content");
+  iframe.src = `pages/${page}.html`;
+}
