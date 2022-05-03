@@ -1,6 +1,26 @@
-#playerContent div {
+#playerList {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.playerSection {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 20%;
+  width: 100%;
+
+  padding: 6px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.zebra {
+  background-color: #eee;
 }

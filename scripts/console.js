@@ -1,25 +1,19 @@
-function sendCommand(payload){
-  let client = new XMLHttpRequest();
+async function sendCommand(payload){
   let key = new window.URLSearchParams(window.location.search).get("k");
   let url = '/mojoplus/api';
+  let data = JSON.stringify({ "k": key, "request": "invoke", "payload": payload });
 
-  client.open("POST", url, true);
-  client.setRequestHeader("Content-Type", "application/json");
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: data,
+  })
 
-  client.onreadystatechange = () => {
-    if (client.readyState === 4 && client.status === 200) {
-      let result = document.getElementById("c2");
-
-      // Print received data from server
-      result.innerHTML = JSON.parse(this.responseText).payload.replace(/\n/g, "<p/>");
-    }
-  };
-
-  // Converting JSON data to string
-  var data = JSON.stringify({ "k": key, "request": "invoke", "payload": payload });
+  let json = await response.json();
   
-  // Sending data with the request
-  client.send(data);
+  return json
 }
 
 function switchPage(page) {

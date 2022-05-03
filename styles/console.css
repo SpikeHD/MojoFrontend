@@ -17,6 +17,23 @@ iframe {
   margin: 20px;
 }
 
+button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 3px;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #eee;
+}
+
 #logo {
   height: 20px;
 }
