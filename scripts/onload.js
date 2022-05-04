@@ -22,12 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     item.onclick = (e) => switchPage(e.target.dataset.value)
   }
   checkStatus();
-  setInterval(() => {
+  setInterval(() => { // check console status
     checkStatus();
   }, 30 * 1000 );
-  document.getElementById("messageBox").onclick = (e) => {
-    e.stopImmediatePropagation();
-  }
-  window.
-  document.getElementById("content").style.height = "400px";
-})
+  // adjust frame height
+    var height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+    var content = document.getElementById("content");
+    height = height - content.getBoundingClientRect().y - 30;
+    content.style.height = height + "px";
+
+    message("Hello world!");
+    setTimeout(function() {message("Hello world!2");}, 2000);
+    
+  })
