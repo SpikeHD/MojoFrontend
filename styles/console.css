@@ -61,6 +61,13 @@ button:hover {
   padding: 20px;
   text-align: left;
   font-weight: bold;
+  margin-left: 30px;
+}
+
+#status {
+  font-size: 0.7em;
+  display: inline-block;
+  margin-left: 20em;
 }
 
 #sidebar {
@@ -87,4 +94,81 @@ button:hover {
 #content {
   height: 100%;
   width: 100%;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ready {
+  color: lightgreen;
+}
+
+.ready .dot {
+  background-color: lightgreen;
+
+}
+
+.error {
+  color: darkred;
+}
+
+.error .dot {
+  background-color: darkred;
+}
+
+#message {
+  position: absolute;
+  background-color: #0000005b;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  top: 0px;
+  transition: all ease-in 0.5s;
+  opacity: 1;
+}
+
+#messageBox {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  background-color: #f2f3c6;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 26px -9px rgba(0,0,0,0.83); 
+  box-shadow: 0px 0px 26px -9px rgba(0,0,0,0.83);
+}
+
+#messageContent {
+  margin-top: 0.2em;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  margin-bottom: 0.2em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.messageBoxTitle {
+  width: 100%;
+  height: 2em;
+  padding-top:1em;
+  text-align: center;
+
+  background: rgb(16,232,253);
+background: linear-gradient(180deg, rgba(16,232,253,1) 0%, rgba(16,248,253,0.5914959733893557) 70%, rgba(249,255,0,0) 100%);
+
 }

@@ -9,14 +9,29 @@
     <div id="main">
       <div id="titleBar">
         Mojo Console <img src="" id="logo" />
+        <div id="status" class="ready"><span class="dot"></span><span id="statusText">Ready</span></div>
       </div>
       <div id="right">
         <div id="sidebar">
+          <div class="sidebarItem" data-value="cheat">Cheating</div>
           <div class="sidebarItem" data-value="players">Players</div>
           <div class="sidebarItem" data-value="server">Server</div>
           <div class="sidebarItem" data-value="settings">Settings</div>
         </div>
-        <iframe id="content" src="pages/default.html"></iframe>
+        <iframe id="content" src="pages/cheat.html"></iframe>
+      </div>
+    </div>
+    <div id="message" class="hide" onclick="dismissMessage()">
+      <div id="messageBox" onclick="">
+        <div class="messageBoxTitle">
+          Server Response
+        </div>
+        <div id="messageContent">
+          Message!
+        </div>
+        <div>
+          <button style="margin-bottom: 1em;" onclick="dismissMessage()"> Dismiss </button>
+        </div>
       </div>
     </div>
   </body>

@@ -9,7 +9,7 @@ function kickUser(username) {
 }
 
 async function displayUserList() {
-  const resp = await sendCommand('/list');
+  const resp = await sendCommand('/list', 'invoke', true);
 
   // Do some funky string stuff
   const dataArr = resp.payload.split('\n').map(x => x.trim()).filter(x => x.length > 0);
