@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     height = height - content.getBoundingClientRect().y - 30;
     content.style.height = height + "px";
 
-    message("Hello world!");
-    setTimeout(function() {message("Hello world!2");}, 2000);
+    message("Welcome to MojoConsolePlus!");
     
   })

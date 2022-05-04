@@ -14,13 +14,10 @@ async function sendCommand(payload, method="invoke", background=false, persisten
   let json = await response.json();
   if (method == 'invoke' && !background) {
     var m = json.payload.trim().replace(/\r/g, "").replace(/\n\n/g, "\n");
-    console.log(json);
-    console.log(m);
     if(persistent == "auto") {
       var m2 = m.replace(/\n/g, "");
       persistent = (m.length - m2.length) > 3; // true more than 3 lines
     }
-    console.log(persistent);
     message(`${m}`, null, persistent);
   }
   return json
