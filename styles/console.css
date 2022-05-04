@@ -122,40 +122,52 @@ button:hover {
 
 #message {
   position: absolute;
-  background-color: #0000005b;
-  width: 100vw;
-  height: 100vh;
+  background-color: #00000000;
+  left: 50vw;
+  transform: translateX(-50%);
+  height: fit-content;
   z-index: 100;
   top: 0px;
-  transition: all ease-in 0.5s;
   opacity: 1;
-}
-
-#messageBox {
-  width: 300px;
-  height: 200px;
-  position: absolute;
-  top:50%;
-  left:50%;
-  background-color: #f2f3c6;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.messageBox {
+  margin-top: 1em;
+  width: 400px;
+  /* min-height: 60px; */
+  background-color: #f2f3c6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  border-radius: 25px;
+  border-radius: 10px;
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 26px -9px rgba(0,0,0,0.83); 
   box-shadow: 0px 0px 26px -9px rgba(0,0,0,0.83);
+  padding: 1em 1em;
+  transition: all ease-in-out 0.3s;
+  height: fit-content;
 }
 
-#messageContent {
-  margin-top: 0.2em;
+.messageBox.initial {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.messageBox.finish {
+  transform: translateY(-100%);
+  opacity: 0;
+  min-height: 0px;
+  height: 0px;
+  margin: -15px;
+}
+
+.messageContent {
   overflow-wrap: break-word;
   overflow-y: auto;
-  margin-bottom: 0.2em;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .hide {
