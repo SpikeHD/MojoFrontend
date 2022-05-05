@@ -10,17 +10,30 @@ async function sendCommand(payload, method="invoke", background=false, persisten
     },
     body: data,
   })
-
-  let json = await response.json();
-  if (method == 'invoke' && !background) {
-    var m = json.payload.trim().replace(/\r/g, "").replace(/\n\n/g, "\n");
-    if(persistent == "auto") {
-      var m2 = m.replace(/\n/g, "");
-      persistent = (m.length - m2.length) > 3; // true more than 3 lines
+  try {
+    let json = await response.json();
+    try{
+      if (method == 'invoke' && !background) {
+        if (json.code != 200) throw Error('');
+        var m = json.payload.trim().replace(/\r/g, "").replace(/\n\n/g, "\n");
+        if(persistent == "auto") {
+          var m2 = m.replace(/\n/g, "");
+          persistent = (m.length - m2.length) > 3; // true more than 3 lines
+        }
+        message(`${m}`, null, persistent);
+      }
+      return json
+    } catch (e) {
+      var messages = `Request failed.`
+      if (json.code) {
+        messages += ` Code: ${json.message}`
+      }
+      message(messages, "fail", false);
     }
-    message(`${m}`, null, persistent);
+
+  } catch (err) {
+    message("Connection issue.", "fail", false);
   }
-  return json
 }
 
 function dismissMessage(){

@@ -7,14 +7,14 @@
 .toolset {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 #panel {
     margin-left: 3em;
     display: flex;
     flex-direction: column;
-    margin-right: 3em;
-    min-width: 30em;
+    min-width: 70vw;
     overflow-y: auto;
 }
 
@@ -24,6 +24,17 @@
     align-items: center;
     width: 100%;
     padding-right: 0.5em;
+}
+
+.commandGroup>*:last-child {
+
+    /* margin-left: auto; */
+    margin-right: 0.5em;
+}
+
+.commandGroup input{
+    /* margin-left: 1em; */
+    margin-right: 1em;
 }
 
 hr.solid {

@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkStatus();
   }, 30 * 1000 );
   // adjust frame height
+  setTimeout(() => {
     var height = window.innerHeight
     || document.documentElement.clientHeight
     || document.body.clientHeight;
@@ -34,5 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
     content.style.height = height + "px";
 
     message("Welcome to MojoConsolePlus!");
-    
+  },10); // delay height modification to avoid issues
   })

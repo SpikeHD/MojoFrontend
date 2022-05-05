@@ -57,7 +57,7 @@ button:hover {
 }
 
 #titleBar {
-  font-size: 3em;
+  font-size: 2em;
   padding: 20px;
   text-align: left;
   font-weight: bold;
@@ -66,8 +66,10 @@ button:hover {
 
 #status {
   font-size: 0.7em;
-  display: inline-block;
-  margin-left: 20em;
+  float: right;
+  margin-top: -1em;
+  display: flex;
+  align-items: center;
 }
 
 #sidebar {
@@ -100,7 +102,9 @@ button:hover {
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  border: 2px solid grey;
   display: inline-block;
+  margin-left: 3px;
 }
 
 .ready {
@@ -150,6 +154,11 @@ button:hover {
   padding: 1em 1em;
   transition: all ease-in-out 0.3s;
   height: fit-content;
+}
+
+.messageBox.fail {
+  background-color: #f65531;
+
 }
 
 .messageBox.initial {
