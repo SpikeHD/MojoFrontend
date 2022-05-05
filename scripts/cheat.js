@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }
         console.log(e.target);
     }
-   genQuickCommand();
+//    genQuickCommand();
+genWeapon();
    document.getElementById("tab-1").onclick = genQuickCommand;
+   document.getElementById("tab-3").onclick = genWeapon;
 });

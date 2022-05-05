@@ -1,5 +1,6 @@
 qucick_command = [
     {name: "Heal All Characters", command: "heal", args: []},
+    {name: "Get current position", command: "position", args: []},
     {name: "Give Mora", command: "give 202", args: [
         {type: "number", default: 100000, width: 145}
     ]},
@@ -18,6 +19,16 @@ qucick_command = [
     ]}, 
     {name: "Give all items", command: "giveall", args: []},
     {name: "Clear all items", command: "clear all", args: []},
+    {name: "Set talent E", command: "talent e", args: [
+        {type: "number", default: 10, width: 60}
+    ]},
+    {name: "Set talent Q", command: "talent q", args: [
+        {type: "number", default: 10, width: 60}
+
+    ]},
+    {name: "Set talent N", command: "talent n", args: [
+        {type: "number", default: 10, width: 60}
+    ]},
 ]
 
 function genQuickCommand() {
