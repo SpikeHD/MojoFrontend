@@ -45,3 +45,6 @@ hr.solid {
     margin-bottom: 8px;
 }
   
+.hidden {
+    display: none;
+}
