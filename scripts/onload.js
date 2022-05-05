@@ -1,3 +1,5 @@
+var networkIssuesInformed = false;
+
 function checkStatus(){
   var status = document.getElementById("status");
   sendCommand("", "ping").then(res => {
@@ -5,6 +7,7 @@ function checkStatus(){
       status.classList.add("ready");
       status.classList.remove("error");
       document.getElementById("statusText").innerText = "Ready";
+      networkIssuesInformed = false;
     } else {
       throw new Error("");
     }
@@ -12,6 +15,10 @@ function checkStatus(){
     status.classList.add("error");
     status.classList.remove("ready");
     document.getElementById("statusText").innerText = "Error";
+    if (!networkIssuesInformed) {
+      message("Network issue detected, you may request a new MojoConsole link in game.", "fail");
+      networkIssuesInformed = true;
+    }
   })
 }
 
