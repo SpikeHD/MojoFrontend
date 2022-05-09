@@ -16,6 +16,7 @@
     flex-direction: column;
     width: 70vw;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .commandGroup {
@@ -47,4 +48,9 @@ hr.solid {
   
 .hidden {
     display: none;
+}
+
+.search-box {
+    height: 3em;
+    transition: all ease-in-out 0.5s;
 }

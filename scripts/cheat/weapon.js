@@ -34,7 +34,6 @@ function genWeapon() {
 
 function updateWeaponList() {
     var filter = document.getElementById("weapon-filter").value;
-    console.log(filter);
     var select = document.getElementById("weapon-id");
     select.innerHTML = "";
     weapon_list.forEach(element => {

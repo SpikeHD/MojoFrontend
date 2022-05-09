@@ -1,8 +1,9 @@
+var DEBUG = true;
 async function sendCommand(payload, method="invoke", background=false, persistent="auto") {
   let key = new window.URLSearchParams(window.location.search).get("k");
   let url = '/mojoplus/api';
   let data = JSON.stringify({ "k": key, "request": method, "payload": payload });
-
+  if (DEBUG) console.log(payload);
   let response = await fetch(url, {
     method: 'POST',
     headers: {

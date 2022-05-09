@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
         if (e.target != toolset && e.target.tagName == "LABEL") {
             panel.innerHTML = ""; // clear the panel
         }
-        console.log(e.target);
     }
-//    genQuickCommand();
-genWeapon();
+   genQuickCommand();
+// genWeapon();
+// genAvatar();
+// genReli();
    document.getElementById("tab-1").onclick = genQuickCommand;
+   document.getElementById("tab-2").onclick = genAvatar;
    document.getElementById("tab-3").onclick = genWeapon;
+   document.getElementById("tab-4").onclick = genReli;
 });
