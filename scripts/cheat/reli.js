@@ -3,19 +3,19 @@ var filterMethod = "set";
 function genReli() {
     var panel = document.getElementById("panel");
     panel.innerHTML = `<div class="form">
-    <h2>Send Reli to you</h2>
-            <label>Reliquary Name:</label>
-            <div> Search by: 
-                <input id="by-set" type="radio" name="filter_type" checked /> <label for="by-set" class="checkable">Set</label> 
-                <input id="by-name" type="radio" name="filter_type" />  <label for="by-name" class="checkable">Name</label> 
-                <button id="clear-reli-search" class="hidden by-name">Clear</button>
+    <h2>发送圣遗物</h2>
+            <label>圣遗物名称：</label>
+            <div> 检索方式：
+                <input id="by-set" type="radio" name="filter_type" checked /> <label for="by-set" class="checkable">按套装</label> 
+                <input id="by-name" type="radio" name="filter_type" />  <label for="by-name" class="checkable">按名称</label> 
+                <button id="clear-reli-search" class="hidden by-name">清除</button>
             </div>
             <div style="display: flex;" id="search-box" class="search-box">
                 <div style="flex: 2;">
                     <select id="reli-set" class="by-set">
-                        <option value="0">Set: All</option>
+                        <option value="0">套装：全部</option>
                     </select>
-                    <input id="reli-search" style="margin-top: 0.25em" type="text" class="hidden by-name" placeholder="Search Reliquary Name" />
+                    <input id="reli-search" style="margin-top: 0.25em" type="text" class="hidden by-name" placeholder="搜索圣遗物名称" />
                 </div>
                 <div style="flex: 1; margin-left: 0.5em" class="by-set">
                     <select id="reli-quality" class="by-set">
@@ -31,10 +31,10 @@ function genReli() {
                 
             <input id="reli-id" type="text" style="display: none;" />
 
-            <label for="level">Level:</label><input type="number" id="level" name="level" value=20 />
+            <label for="level">强化等级:</label><input type="number" id="level" name="level" value=20 />
             <div style="display: flex; flex-direction: column; margin-top: 1em;">
                 <div style="flex: 2; padding: 0.5em;" class="card">
-                    <label for="main-prop">Main Props:</label>
+                    <label for="main-prop">主属性：</label>
                     <div style="display: flex; align-items: end">
                         <div style="flex: 4;">
                             <select id="main-prop"> </select>
@@ -46,10 +46,10 @@ function genReli() {
                     </div>
                 </div>
                 <div style="flex: 4;padding: 0.5em;" class="card">
-                    <label for="append-prop">Append Props:</label>
+                    <label for="append-prop">副属性：</label>
                     <table style="width: 100%">
                         <thead>
-                            <tr><th style="width:50%">Prop</th><th style="width:30%">Value</th><th style="width:10%">Times</th><th style="width: 5%"></th></tr>
+                            <tr><th style="width:50%">属性</th><th style="width:30%">数值</th><th style="width:20%">次数</th><th style="width: 5%"></th></tr>
                         </thead>
                         <tbody id="tbody-affix-prop">
                            
@@ -67,14 +67,14 @@ function genReli() {
                 </div>
             </div>
 
-            <button id="execute">Send</button>
+            <button id="execute">发送</button>
     </div>`;
     document.getElementById("reli-id").setvalue = updateReliId;
     var filter = document.getElementById("reli-set");
     reli_list.forEach(reli => {
         var o = document.createElement("option");
         o.value = reli.id;
-        o.innerText = "Set: " + reli.name;
+        o.innerText = "套装：" + reli.name;
         filter.appendChild(o);
     })
     document.getElementById("reli-set").oninput = updateQualityList;
@@ -161,7 +161,7 @@ function updateQualityList() {
                     if (element.contains[i+1]) {
                         var o = document.createElement("option");
                         o.value = i + 1;
-                        o.innerText = "Q: " + {0: "White", 1: "Green", 2: "Blue", 3: "Purple", 4: "Orange", 5:"Unknown"} [i];
+                        o.innerText = "质量: " + {0: "白色", 1: "绿色", 2: "蓝色", 3: "紫色", 4: "金色", 5:"未知"} [i];
                         qualities[i] = o;
                     }
                 }

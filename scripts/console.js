@@ -25,15 +25,15 @@ async function sendCommand(payload, method="invoke", background=false, persisten
       }
       return json
     } catch (e) {
-      var messages = `Request failed.`
+      var messages = `请求失败.`
       if (json.code) {
-        messages += ` Code: ${json.message}`
+        messages += ` 错误信息: ${json.message}`
       }
       message(messages, "fail", false);
     }
 
   } catch (err) {
-    message("Connection issue.", "fail", false);
+    message("连接失败或服务器内部错误。", "fail", false);
   }
 }
 
@@ -59,7 +59,7 @@ function message(message, className, persistent=false) {
   var dismissButton = document.createElement("button");
   mc.classList.add("messageContent");
   mc.innerText = message;
-  dismissButton.innerText = "Dissmiss";
+  dismissButton.innerText = "关闭";
   m.appendChild(mc);
   m.appendChild(dismissButton);
   document.getElementById("message").appendChild(m);

@@ -1,32 +1,32 @@
 qucick_command = [
-    {name: "Heal All Characters", command: "heal", args: []},
-    {name: "Get current position", command: "position", args: []},
-    {name: "Give Mora", command: "give 202", args: [
+    {name: "治疗全部角色", command: "heal", args: []},
+    {name: "获取当前位置", command: "position", args: []},
+    {name: "给予摩拉", command: "give 202", args: [
         {type: "number", default: 100000, width: 145}
     ]},
-    {name: "Give Proigem", command: "give 201", args: [
+    {name: "给予原石", command: "give 201", args: [
         {type: "number", default: 10000, width: 120}
     ]},
-    {name: "Give Intertwined Fate", command: "give 223", args: [
+    {name: "给予纠缠之缘", command: "give 223", args: [
         {type: "number", default: 10000, width: 100}
     ]},
-    {name: "Give Acquaint Fate", command: "give 224", args: [
+    {name: "给予相遇之缘", command: "give 224", args: [
         {type: "number", default: 10000, width: 100}
     ]},
-    {name: "Toggle Godmode", command: "godmode", args: []},
-    {name: "Set world level(relog required)", command: "setworldlevel", args: [
+    {name: "开启/关闭无敌模式", command: "godmode", args: []},
+    {name: "设置世界等级(需要重新登陆)", command: "setworldlevel", args: [
         {type: "number", default: 8, width: 60}
     ]}, 
-    {name: "Give all items", command: "giveall", args: []},
-    {name: "Clear all items", command: "clear all", args: []},
-    {name: "Set talent E", command: "talent e", args: [
+    {name: "获取全部道具", command: "giveall", args: []},
+    {name: "清除全部道具", command: "clear all", args: []},
+    {name: "设置当前角色E技能等级", command: "talent e", args: [
         {type: "number", default: 10, width: 60}
     ]},
-    {name: "Set talent Q", command: "talent q", args: [
+    {name: "设置当前角色Q技能等级", command: "talent q", args: [
         {type: "number", default: 10, width: 60}
 
     ]},
-    {name: "Set talent N", command: "talent n", args: [
+    {name: "设置当前角色普攻等级", command: "talent n", args: [
         {type: "number", default: 10, width: 60}
     ]},
 ]

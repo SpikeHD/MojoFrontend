@@ -2,24 +2,24 @@
 function genAvatar() {
     var panel = document.getElementById("panel");
     panel.innerHTML = `<div class="form">
-    <h2>Send Character to you</h2>
-            <label for="character-id">Character Name:</label>
+    <h2>向自己发送角色</h2>
+            <label for="character-id">角色名称:</label>
                 <div style="display: flex;">
                     <select id="character-filter" style="flex: 2">
-                        <option value="0"> Filter:All </option>
-                        <option value="Electric"> Filter:Electric </option>
-                        <option value="Ice"> Filter:Ice </option>
-                        <option value="Wind"> Filter:Wind </option>
-                        <option value="Water"> Filter:Water </option>
-                        <option value="Fire"> Filter:Fire </option>
-                        <option value="Rock"> Filter:Rock </option>
-                        <option value="Grass"> Filter:Grass </option>
+                        <option value="0"> 筛选：全部 </option>
+                        <option value="Electric"> 筛选：雷元素 </option>
+                        <option value="Ice"> 筛选：冰元素 </option>
+                        <option value="Wind"> 筛选：风元素 </option>
+                        <option value="Water"> 筛选：水元素 </option>
+                        <option value="Fire"> 筛选：火元素 </option>
+                        <option value="Rock"> 筛选：岩元素 </option>
+                        <option value="Grass"> 筛选：草元素 </option>
                     </select>
                     <select id="character-id" style="flex: 4; margin-left: 0.5em"> </select>
                 </div>
-            <label for="level">Level:</label><input type="number" id="level" name="level" value=1 />
-            <label for="amount">Constellation(Will be sent as Stella Fortuna):</label><input type="number" id="amount" name="amount" value=0 />
-            <button id="execute">Send</button>
+            <label for="level">等级:</label><input type="number" id="level" name="level" value=1 />
+            <label for="amount">命座（以命星的形式发送）:</label><input type="number" id="amount" name="amount" value=0 />
+            <button id="execute">发送</button>
     </div>`;
 
     updateCharacterList();
