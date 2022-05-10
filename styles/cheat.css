@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 3em;
 }
 
 .toolset {
