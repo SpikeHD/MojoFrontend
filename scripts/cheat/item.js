@@ -15,7 +15,7 @@ function genItem() {
                         <input id="item-search" style="flex: 4" type="text" placeholder="Search Item Name" />
                         <button id="clear" style="margin-left: 0.25em; transition: all ease-in-out 0.5s; flex: 0; opacity: 0;">Clear</button>
                     </div>
-                    <div id="name-list" style="overflow-y: auto; overflow-x: hidden; max-height: 20em;height: 100%; transition: all ease-in-out 0.5s;">
+                    <div id="name-list" style="overflow-y: auto; overflow-x: hidden; max-height: 10em;height: 100%; transition: all ease-in-out 0.5s;">
                     </div>
                 </div>
             <label for="amount">Amount:</label><input type="number" id="amount" name="amount" value=100 />
@@ -36,7 +36,7 @@ function genItem() {
             clearTimeout(delayedSearch);
         }
         delayedSearch = setTimeout(() => updateItemList(), 500);
-        document.getElementById("name-list").style.height = "20em";
+        document.getElementById("name-list").style.height = "10em";
     };
     document.getElementById("clear").onclick = ()=>{
         document.getElementById("item-search").value = "";
@@ -88,7 +88,7 @@ function updateItemList() {
     var filter = document.getElementById("item-search").value;
     var list = document.getElementById("name-list");
     list.innerHTML = "";
-    list.style.height = "20em";
+    list.style.height = "10em";
     item_data.forEach(element => {
         if (filter == "" || element.name.toLowerCase().indexOf(filter.toLowerCase()) != -1) {
             var o = document.createElement("label");
