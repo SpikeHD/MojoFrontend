@@ -1,5 +1,5 @@
 # MojoFrontend
-Frontend for Mojo Console
+Frontend for [Mojo Console](https://github.com/mingjun97/gc-mojoconsole-plus).
 
 
 ## Usage
