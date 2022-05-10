@@ -59,7 +59,7 @@ function message(message, className, persistent=false) {
   var dismissButton = document.createElement("button");
   mc.classList.add("messageContent");
   mc.innerText = message;
-  dismissButton.innerText = "关闭";
+  dismissButton.innerText = "好";
   m.appendChild(mc);
   m.appendChild(dismissButton);
   document.getElementById("message").appendChild(m);
