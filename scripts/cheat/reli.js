@@ -77,7 +77,6 @@ function genReli() {
         o.innerText = "Set: " + reli.name;
         filter.appendChild(o);
     })
-    updateQualityList();
     document.getElementById("reli-set").oninput = updateQualityList;
     document.getElementById("reli-quality").oninput = ()=>{ updateReliList(); updateReliId(document.getElementById("reli-select").value);};
     document.getElementById("reli-select").oninput = (e) => {
@@ -95,6 +94,12 @@ function genReli() {
             document.getElementById("reli-id").setvalue(e.target.attributes['reli-id'].nodeValue, e.target.attributes['reli-quality'].nodeValue);
             setTimeout(() => {
                 document.getElementById("search-box").style.height = "3em";
+                var color = "quality-" + {0: "white", 1: "green", 2: "blue", 3: "purple", 4:"orange", 5: "unknown"}[e.target.attributes['reli-quality'].nodeValue - 1];
+                var content = `<input name="stack" type="radio" name="reli-id" reli-id="${e.target.attributes['reli-id'].nodeValue}" reli-name="${e.target.attributes['reli-name'].nodeValue}" reli-quality="${e.target.attributes['reli-quality'].nodeValue}">
+                <span class="button ${color}">
+                ${e.target.attributes['reli-name'].nodeValue}
+                </span>`;
+                document.getElementById("name-list").innerHTML = content;
             }, 10);
             updateQualityList();
         }
@@ -139,6 +144,8 @@ function genReli() {
         })
         sendCommand(`giveart ${reliId} ${mainPropId} ${affix} ${parseInt(level)+1}`.replace("  ", " "));
     }
+    document.getElementById("by-set").onchange();
+    updateQualityList();
 }
 
 // ----------------------------------------------------------------
