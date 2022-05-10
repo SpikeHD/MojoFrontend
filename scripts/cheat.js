@@ -11,8 +11,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
 // genWeapon();
 // genAvatar();
 // genReli();
+// genItem();
+// genMonster();
    document.getElementById("tab-1").onclick = genQuickCommand;
    document.getElementById("tab-2").onclick = genAvatar;
    document.getElementById("tab-3").onclick = genWeapon;
    document.getElementById("tab-4").onclick = genReli;
+   document.getElementById("tab-5").onclick = genItem;
+   document.getElementById("tab-6").onclick = genMonster;
 });

@@ -88,3 +88,9 @@ hr.solid {
     background: rgb(158, 1, 158) !important;
     color: #fff;
 }
+
+.quality-gray {
+    background: rgb(187, 187, 187) !important;
+    color: rgb(0, 0, 0) !important;
+
+}
