@@ -54,3 +54,37 @@ hr.solid {
     height: 3em;
     transition: all ease-in-out 0.5s;
 }
+
+.by-name {
+    overflow-y: auto;
+}
+
+.quality-blue {
+    background: rgb(40, 40, 255);
+    color: #fff;
+}
+
+.quality-orange {
+    background: orange !important;
+    color: #fff;
+}
+
+.quality-green {
+    background: rgb(67, 140, 74) !important;
+    color: #fff;
+}
+
+.quality-white {
+    background: rgb(124, 124, 124) !important;
+    color: #fff;
+}
+
+.quality-unknown {
+    background: rgb(240, 60, 60) !important;
+    color: #fff;
+}
+
+.quality-purple {
+    background: rgb(158, 1, 158) !important;
+    color: #fff;
+}

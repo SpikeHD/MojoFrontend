@@ -18,7 +18,7 @@ function genAvatar() {
                     <select id="character-id" style="flex: 4; margin-left: 0.5em"> </select>
                 </div>
             <label for="level">Level:</label><input type="number" id="level" name="level" value=1 />
-            <label for="amount">Constellation(Will be sent as ITEM):</label><input type="number" id="amount" name="amount" value=0 />
+            <label for="amount">Constellation(Will be sent as Stella Fortuna):</label><input type="number" id="amount" name="amount" value=0 />
             <button id="execute">Send</button>
     </div>`;
 
