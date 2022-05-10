@@ -201,7 +201,7 @@ function updateQualityList() {
                 })
             })
         })
-        document.getElementById("search-box").style.height = "20em";
+        document.getElementById("search-box").style.height = "10em";
     }
 }
 
